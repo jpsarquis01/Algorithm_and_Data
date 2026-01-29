@@ -3,32 +3,99 @@
 #include "Array.h"
 #include "Player.h"
 
-void Fight(const Player& player1, const Player& player2)
+// simple pool of names to pick from
+static const char* gNames[] =
 {
-	// PlayerA calculations
-	int player1Atk = player1.GetStat(Stats::Attack);
-	int player1Sta = player1.GetStat(Stats::Stamina);
-	int player2Def = player2.GetStat(Stats::Defense);
-	int player2Spd = player2.GetStat(Stats::Speed);
-	int player2Health = player2.GetStat(Stats::Health);
-	int damageToPlayer2 = (player1Atk * player1Sta) - (player2Def + player2Spd / player2Health);
+	"Link","Mario","Zelda","Samus","Kratos","MasterChief","LaraCroft","Geralt",
+	"SolidSnake","Sonic","Cloud","Sephiroth","ArthurMorgan","Joel","Ellie","Ezio",
+	"Dante","MegaMan","Pikachu","Kirby","Bowser","Yoshi","DonkeyKong","FoxMcCloud",
+	"LeonKennedy","JillValentine","Ryu","Ken","SubZero","Scorpion"
+};
 
-	// PlayerB calculations
-	int player2Atk = player2.GetStat(Stats::Attack);
-	int player2Sta = player2.GetStat(Stats::Stamina);
-	int player1Def = player1.GetStat(Stats::Defense);
-	int player1Spd = player1.GetStat(Stats::Speed);
-	int player1Health = player1.GetStat(Stats::Health);
-	int damageToPlayer1 = (player2Atk * player2Sta) - (player1Def + player1Spd / player1Health);
+// get number of names in pool
+static int GetNameCount()
+{
+	return (int)(sizeof(gNames) / sizeof(gNames[0]));
+}
 
-	if (damageToPlayer2 > damageToPlayer1)
+// make a random player from the name pool
+static Player MakeRandomPlayer()
+{
+	int idx = std::rand() % GetNameCount();
+	return Player(gNames[idx]);
+}
+
+// add X random players to the vector
+static void AddRandomPlayers(Vector<Player>& players, int count)
+{
+	for (int i = 0; i < count; ++i)
+	{
+		players.PushBack(MakeRandomPlayer());
+	}
+}
+
+// remove X players from the end of the vector
+static void RemovePlayers(Vector<Player>& players, int howMany)
+{
+	for (int i = 0; i < howMany; ++i)
+	{
+		if (players.Size() > 0)
+		{
+			players.PopBack();
+		}
+	}
+}
+
+// print all players in the vector
+static void PrintAllPlayers(const Vector<Player>& players)
+{
+	for (int i = 0; i < players.Size(); ++i)
+	{
+		std::cout << i + 1 << ". ";
+		players[i].PrintStats();
+		std::cout << "-----------------------\n";
+	}
+}
+
+// PlayerA(Attack * Stamina) - PlayerB(Defense * Speed) / PlayerB(Health)
+static int HitValue(const Player& attacker, const Player& defender)
+{
+	int atk = attacker.GetStat(Stats::Attack);
+	int sta = attacker.GetStat(Stats::Stamina);
+
+	int def = defender.GetStat(Stats::Defense);
+	int spd = defender.GetStat(Stats::Speed);
+	int hp = defender.GetStat(Stats::Health);
+
+	return (atk * sta) - ((def * spd) / hp);
+}
+
+static void Fight(const Player& player1, const Player& player2)
+{
+	// Player1 hits Player2
+	int damageToPlayer2 = HitValue(player1, player2);
+
+	// Player2 hits Player1 (reverse calc)
+	int damageToPlayer1 = HitValue(player2, player1);
+
+	// keep it simple: negative damage = 0
+	int realDamageToP1 = (damageToPlayer1 > 0) ? damageToPlayer1 : 0;
+	int realDamageToP2 = (damageToPlayer2 > 0) ? damageToPlayer2 : 0;
+
+	int p1Health = player1.GetStat(Stats::Health);
+	int p2Health = player2.GetStat(Stats::Health);
+
+	int remainingP1 = p1Health - realDamageToP1;
+	int remainingP2 = p2Health - realDamageToP2;
+
+	if (remainingP2 > remainingP1)
 	{
 		std::cout << "--------------------------------\n";
 		std::cout << "Winner:\n";
 		std::cout << "--------------------------------\n";
 		player1.PrintStats();
 	}
-	else if (damageToPlayer1 > damageToPlayer2)
+	else if (remainingP1 > remainingP2)
 	{
 		std::cout << "--------------------------------\n";
 		std::cout << "Winner:\n";
@@ -40,20 +107,15 @@ void Fight(const Player& player1, const Player& player2)
 		std::cout << "It's a Tie!\n";
 		std::cout << "Flipping a coin to determine the winner...\n";
 		int coinFlip = std::rand() % 2; // 0 or 1
+
+		std::cout << "--------------------------------\n";
+		std::cout << "Winner:\n";
+		std::cout << "--------------------------------\n";
+
 		if (coinFlip == 0)
-		{
-			std::cout << "--------------------------------\n";
-			std::cout << "Winner:\n";
-			std::cout << "--------------------------------\n";
 			player1.PrintStats();
-		}
 		else
-		{
-			std::cout << "--------------------------------\n";
-			std::cout << "Winner:\n";
-			std::cout << "--------------------------------\n";
 			player2.PrintStats();
-		}
 	}
 }
 
@@ -64,94 +126,33 @@ int main()
 	Vector<Player> playersVector;
 	playersVector.Reserve(10);
 
-	Player Player1("Greivin");
-	Player Player2("Alfredo");
-	Player Player3("Santiago");
-	Player Player4("Darren");
-	Player Player5("Arthur");
-	Player Player6("Ayush");
-	Player Player7("Thomas");
-	Player Player8("Juan");
-	Player Player9("Alfredo");
-	Player Player10("Tavin");
+	// add 10 players
+	AddRandomPlayers(playersVector, 10);
 
-	playersVector.PushBack(Player1);
-	playersVector.PushBack(Player2);
-	playersVector.PushBack(Player3);
-	playersVector.PushBack(Player4);
-	playersVector.PushBack(Player5);
-	playersVector.PushBack(Player6);
-	playersVector.PushBack(Player7);
-	playersVector.PushBack(Player8);
-	playersVector.PushBack(Player9);
-	playersVector.PushBack(Player10);
-
-	std::cout << "Part 1: \n";
+	std::cout << "Add 10 players: \n";
 	std::cout << "--------------------------------\n";
-	for (int i = 0; i < playersVector.Size(); ++i)
-	{
-		std::cout << i + 1 << ". ";
-		playersVector[i].PrintStats();
-		std::cout << "-----------------------\n";
-	}
+	PrintAllPlayers(playersVector);
 
-	// removes last 6 players from the vector. 0-5 indexes
-	for (int i = 0; i < 6; ++i)
-	{
-		playersVector.PopBack();
-	}
+	// remove last 6
+	RemovePlayers(playersVector, 6);
 
-	std::cout << "\nPart 2: \n";
+	std::cout << "\nRemove 6: \n";
 	std::cout << "--------------------------------\n";
-	for (int i = 0; i < playersVector.Size(); ++i)
-	{
-		std::cout << i + 1 << ". ";
-		playersVector[i].PrintStats();
-		std::cout << "-----------------------\n";
-	}
+	PrintAllPlayers(playersVector);
 
 	std::cout << "\ncapacity: " << playersVector.Capacity() << "\n";
 
-	// add 16 more players max it out at 20
-	// Player1 - Player4 left 
+	// fill up to 20 total, then print ONLY the new ones
+	int startNewPlayers = playersVector.Size();
 
-	Player Player11("Liam");
-	Player Player12("Noah");
-	Player Player13("Oliver");
-	Player Player14("Elijah");
-	Player Player15("James");
-	Player Player16("William");
-	Player Player17("Jac");
-	Player Player18("Jose");
-	Player Player19("Alex");
-	Player Player20("Will");
-	Player Player21("Smithers");
-	Player Player22("Homer");
-	Player Player23("Mario");
-	Player Player24("Ronaldo");
-	Player Player25("Speed");
-	Player Player26("Holoa");
+	while (playersVector.Size() < 20)
+	{
+		playersVector.PushBack(MakeRandomPlayer());
+	}
 
-	playersVector.PushBack(Player11);
-	playersVector.PushBack(Player12);
-	playersVector.PushBack(Player13);
-	playersVector.PushBack(Player14);
-	playersVector.PushBack(Player15);
-	playersVector.PushBack(Player16);
-	playersVector.PushBack(Player17);
-	playersVector.PushBack(Player18);
-	playersVector.PushBack(Player19);
-	playersVector.PushBack(Player20);
-	playersVector.PushBack(Player21);
-	playersVector.PushBack(Player22);
-	playersVector.PushBack(Player23);
-	playersVector.PushBack(Player24);
-	playersVector.PushBack(Player25);
-	playersVector.PushBack(Player26);
-
-	std::cout << "\nPart 3: (New Players)\n";
+	std::cout << "\nFill up and print only the NEW ones\n";
 	std::cout << "--------------------------------\n";
-	for (int i = 4; i < playersVector.Size(); ++i)
+	for (int i = startNewPlayers; i < playersVector.Size(); ++i)
 	{
 		std::cout << i + 1 << ". ";
 		playersVector[i].PrintStats();
@@ -160,22 +161,22 @@ int main()
 
 	std::cout << "\nNew capacity: " << playersVector.Capacity() << "\n";
 
-	int randomPlayer1 = std::rand() % 20;
-	int randomPlayer2 = std::rand() % 20; // to get a random player between 1 and 20
+	// Random battle selection
+	int randomPlayer1 = std::rand() % playersVector.Size();
+	int randomPlayer2 = std::rand() % playersVector.Size();
 
 	while (randomPlayer1 == randomPlayer2)
 	{
-		randomPlayer2 = std::rand() % 20;
+		randomPlayer2 = std::rand() % playersVector.Size();
 	}
 
 	std::cout << "\nRandomly Selected Players for Battle: \n";
 	std::cout << "--------------------------------\n";
 	playersVector[randomPlayer1].PrintStats();
-	std::cout << "---------------\033[31mvs\033[0m---------------\n";
+	std::cout << "---------------VS---------------\n";
 	playersVector[randomPlayer2].PrintStats();
 
 	Fight(playersVector[randomPlayer1], playersVector[randomPlayer2]);
 
 	return 0;
 }
-
