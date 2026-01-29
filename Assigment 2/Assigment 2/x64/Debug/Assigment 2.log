@@ -1,0 +1,20 @@
+﻿  Assigment 2.cpp
+  Inventory.cpp
+D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\Assigment 2\PriorityQueue.h(25,20): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Inventory.cpp')
+      D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\Assigment 2\PriorityQueue.h(25,20):
+      the template instantiation context (the oldest one first) is
+          D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\Assigment 2\Inventory.cpp(61,22):
+          see reference to class template instantiation 'PriorityQueue<Item>' being compiled
+          D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\Assigment 2\PriorityQueue.h(22,7):
+          while compiling class template member function 'void PriorityQueue<Item>::Push(const T &)'
+          with
+          [
+              T=Item
+          ]
+              D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\Assigment 2\Inventory.cpp(66,10):
+              see the first reference to 'PriorityQueue<Item>::Push' in 'Inventory::DisplayInventory'
+  
+  Item.cpp
+  Generating Code...
+  Assigment 2.vcxproj -> D:\LaSalle_2yr\Algorithms and Data Patterns\Algorithm_and_Data\Assigment 2\x64\Debug\Assigment 2.exe
