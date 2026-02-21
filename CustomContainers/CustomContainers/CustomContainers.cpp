@@ -5,6 +5,7 @@
 #include "Vector.h"
 #include "PriorityQueue.h"
 #include "Vector2.h"
+#include "Map.h"
 
 
 //int GetValue(int* data, int size, int index)
@@ -91,7 +92,7 @@ struct Item
 
 int main()
 {
-    Vector<Item> items;
+   /* Vector<Item> items;
     KDTree<float, 2> itemLocations;
     int maxItems = 100;
     items.Resize(maxItems);
@@ -106,6 +107,37 @@ int main()
     itemLocations.BuilsTree();
 
     Vector2 minRange = { 200.0f, 200.0f };
-    Vector2 maxRange = { 300.0f, 300.0f };
+    Vector2 maxRange = { 300.0f, 300.0f };*/
+
+	std::cout << "Custom Map:\n";
+	Map<int, int> myMap;
+	for (int i = 0; i < 10; ++i)
+	{
+		int value = rand() % 1000;
+		myMap.Insert(i, value);
+		std::cout << value << " ";
+	}
+	std::cout << "\n\n";
+	std::cout << "Has key 3 " << myMap.Has(3) << "\n";
+	std::cout << "Has key 30" << myMap.Has(30) << "\n";
+
+    Vector<int> allKeys;
+	myMap.ObtainKeys(allKeys);
+    std::cout << "Obtain all Keys:\n";
+	for (std::size_t i = 0; i < allKeys.Size(); ++i)
+	{
+		std::cout << allKeys[i] << " ";
+	}
+    std::cout << "\n";
+	std::cout << "Value for key 5: " << myMap[7] << "\n";
+	myMap.Remove(5);
+	allKeys.Clear();
+	myMap.ObtainKeys(allKeys);
+	std::cout << "Obtain all Keys after removing key 5:\n";
+	for (std::size_t i = 0; i < allKeys.Size(); ++i)
+	{
+		std::cout << allKeys[i] << " ";
+	}
+	myMap.Clear();
 }
 

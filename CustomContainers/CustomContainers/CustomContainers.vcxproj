@@ -134,6 +134,7 @@
     <ClInclude Include="ContainerIterator.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="KDTree.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="UnorderedMap.h" />
     <ClInclude Include="Vector.h" />
