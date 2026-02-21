@@ -1,12 +1,63 @@
 ﻿  CustomContainers.cpp
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(24,23): warning C4267: '=': conversion from 'size_t' to 'T', possible loss of data
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(24,23): warning C4267:         with
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(24,23): warning C4267:         [
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(24,23): warning C4267:             T=int
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(24,23): warning C4267:         ]
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(36,29): warning C4267: 'argument': conversion from 'size_t' to 'const T', possible loss of data
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(36,29): warning C4267:         with
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(36,29): warning C4267:         [
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(36,29): warning C4267:             T=int
-C:\LaSalle 2Year\Algorithms and Data\CustomContainers\CustomContainers\CustomContainers.cpp(36,29): warning C4267:         ]
-  CustomContainers.vcxproj -> C:\LaSalle 2Year\Algorithms and Data\CustomContainers\x64\Debug\CustomContainers.exe
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(15,24): error C2371: 'Vector2::<unnamed-tag>::y': redefinition; different basic types
+  (compiling source file 'CustomContainers.cpp')
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(13,10):
+      see declaration of 'Vector2::<unnamed-tag>::y'
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(25,53): error C2597: illegal reference to non-static member 'Vector2::<unnamed-tag>::y'
+  (compiling source file 'CustomContainers.cpp')
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(25,53):
+      see declaration of 'Vector2::<unnamed-tag>::y'
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(25,53): error C3867: 'Vector2::<unnamed-tag>::y': non-standard syntax; use '&' to create a pointer to member
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(25,53): error C2568: '*': unable to resolve function overload
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(26,53): error C2597: illegal reference to non-static member 'Vector2::<unnamed-tag>::y'
+  (compiling source file 'CustomContainers.cpp')
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(26,53):
+      see declaration of 'Vector2::<unnamed-tag>::y'
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(26,53): error C3867: 'Vector2::<unnamed-tag>::y': non-standard syntax; use '&' to create a pointer to member
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(26,53): error C2568: '/': unable to resolve function overload
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(33,54): error C2597: illegal reference to non-static member 'Vector2::<unnamed-tag>::y'
+  (compiling source file 'CustomContainers.cpp')
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(33,54):
+      see declaration of 'Vector2::<unnamed-tag>::y'
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(33,54): error C3867: 'Vector2::<unnamed-tag>::y': non-standard syntax; use '&' to create a pointer to member
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(33,54): error C2568: '*': unable to resolve function overload
+  (compiling source file 'CustomContainers.cpp')
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(37,58): error C2662: 'float Vector2::DistanceSquared(const Vector2 &)': cannot convert 'this' pointer from 'const Vector2' to 'Vector2 &'
+  (compiling source file 'CustomContainers.cpp')
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(37,58):
+      Conversion loses qualifiers
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(36,8):
+      see declaration of 'Vector2::DistanceSquared'
+      C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\Vector2.h(37,58):
+      while trying to match the argument list '(const Vector2)'
+  
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(27,23): warning C4267: '=': conversion from 'size_t' to 'T', possible loss of data
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(27,23): warning C4267:         with
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(27,23): warning C4267:         [
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(27,23): warning C4267:             T=int
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(27,23): warning C4267:         ]
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(39,29): warning C4267: 'argument': conversion from 'size_t' to 'const T', possible loss of data
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(39,29): warning C4267:         with
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(39,29): warning C4267:         [
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(39,29): warning C4267:             T=int
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(39,29): warning C4267:         ]
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(95,5): error C2065: 'KDTree': undeclared identifier
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(95,12): error C2062: type 'float' unexpected
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(98,37): error C2105: '++' needs l-value
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(103,9): error C2065: 'itemLocations': undeclared identifier
+C:\LaSalle 2Year\Algorithms and Data\Algorithm_and_Data\CustomContainers\CustomContainers\CustomContainers.cpp(106,5): error C2065: 'itemLocations': undeclared identifier

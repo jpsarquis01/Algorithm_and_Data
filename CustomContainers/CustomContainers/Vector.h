@@ -1,4 +1,5 @@
 #pragma once
+
 #include <stddef.h>
 #include <algorithm>
 #include <cassert>
@@ -25,6 +26,73 @@ public:
 		
 		mCapacity = 0;
 		mSize = 0;
+	}
+
+	Vector(const Vector& other)
+	{
+		if (other.mCapacity > 0)
+		{
+			mValues = new T[other.mCapacity];
+			for (int i = 0; i < other.mCapacity; ++i)
+			{
+				mValues = other.mValues[i];
+			}
+		}
+		mSize = other.mSize;
+		mCapacity = other.mCapacity;
+	}
+
+	Vector(Vector&& other)
+	{
+		if (other.mValues != nullptr)
+		{
+			mValues = std::move(other.mValues);
+		}
+
+		mSize = other.mSize;
+		mCapacity = other.mCapacity;
+
+		other.mSize = 0;
+		other.mCapacity = 0;
+	}
+
+	Vector& operator=(const Vector& other)
+	{
+		if (mValues != nullptr)
+		{
+			delete[] mValues;
+			mValues = nullptr;
+		}
+		if (other.mCapacity > 0)
+		{
+			mValues = new T[other.mCapacity];
+			for (int i = 0; i < other.mCapacity; ++i)
+			{
+				mValues[i] = other.mValues[i];
+			}
+		}
+		mSize = other.mSize;
+		mCapacity = other.mCapacity;
+
+		return *this;
+	}
+
+	Vector& operator=(Vector&& other)
+	{
+		if (mValues != nullptr)
+		{
+			delete[] mValues;
+			mValues = nullptr;
+		}
+		mValues = std::move(other.mValues);
+		mSize = other.mSize;
+		mCapacity = other.mCapacity;
+
+		other.mValues = nullptr;
+		other.mSize = 0;
+		other.mCapacity = 0;
+
+		return *this;
 	}
 
 	// Reserve, allocates data for space requirements (only if increasing capacity)
@@ -58,7 +126,7 @@ public:
 		{
 			for (std::size_t i = size; i < mSize; ++i)
 			{
-				mValues[i] ~T();
+				mValues[i].~T();
 			}
 		}
 		else if (mSize < size)
@@ -122,6 +190,14 @@ public:
 		assert(index < mSize);
 		return mValues[index];
 	}
+
+	//Iterrator seccion
+	using Iterator = ContainerIterator<T>;
+	using Const_Iterator = ContainerIterator<const T>;
+	Iterator Begin() { return Iterator(mValues); }
+	Iterator End() { return Iterator(mValues + mSize); }
+	Const_Iterator Begin() const { return Const_Iterator(mValues); }
+	Const_Iterator End() const { return Const_Iterator(mValues + mSize); }
 
 private:
 	T* mValues = nullptr;
