@@ -23,7 +23,7 @@ public:
 			delete[] mValues;
 			mValues = nullptr;
 		}
-		
+
 		mCapacity = 0;
 		mSize = 0;
 	}
@@ -35,7 +35,7 @@ public:
 			mValues = new T[other.mCapacity];
 			for (int i = 0; i < other.mCapacity; ++i)
 			{
-				mValues = other.mValues[i];
+				mValues[i] = other.mValues[i];
 			}
 		}
 		mSize = other.mSize;
@@ -102,7 +102,7 @@ public:
 		{
 			T* newValues = new T[capacity];
 
-			if(mValues != nullptr)
+			if (mValues != nullptr)
 			{
 				for (std::size_t i = 0; i < mSize; ++i)
 				{

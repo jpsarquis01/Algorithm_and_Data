@@ -58,7 +58,7 @@ public:
 		mValues = new T[N];
 		for (int i = 0; i < N; ++i)
 		{
-			mValues[i].other.mValues[i];
+			mValues[i] = other.mValues[i];
 		}
 		return *this;
 	}

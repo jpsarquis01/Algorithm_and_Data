@@ -1,69 +1,68 @@
 #pragma once
-#include <functional>
+
 #include <string>
+#include <functional>
 #include "Vector.h"
 
 namespace Globals
 {
-	std::size_t HasFunction(const std::string& str)
+	std::size_t HashFunction(const std::string& str)
 	{
 		std::size_t hash = 0;
 		for (std::size_t i = 0; i < str.size(); ++i)
 		{
-            hash += (std::size_t)(str[i]);
-            hash = hash << 1;
+			hash = hash ^ ((std::size_t)(str[i]) << 1); // Shift left by 1 to create more unique hash values for different strings
 		}
 		return hash;
 	}
-
 	template<typename T>
 	void Swap(T& a, T& b)
 	{
-		T temp = a;
+		T tmp = a;
 		a = b;
-		b = temp;
+		b = tmp;
 	}
 
-    template<typename T>
-    void BubbleSorrt(Vector<T>& values)
-    {
-        std::size_t size = values.Size();
-        for (std::size_t i = 0; i < size; ++i)
-        {
-            for (std::size_t j = 0; j < size - i - 1; ++j)
-            {
-                if ((values[j] > values[j + 1]))
-                {
-                    Swap(values[j], values[j + 1]);
-                }
-            }
-        }
-    }
-    template<typename T>
-    void BubbleSorrt(Vector<T>& values, std::function<bool(const T&, const T&)>& sortFunc = nullptr)
-    {
-        std::size_t size = values.Size();
-        for (std::size_t i = 0; i < size; ++i)
-        {
-            for (std::size_t j = 0; j < size - i - 1; ++j)
-            {
-                if ((sortFunc(values[j], values[j + 1])))
-                {
-                    Swap(values[j], values[j + 1]);
-                }
-            }
-        }
-    }
 	template<typename T>
-    void SelectionSort(Vector<T>& values)
-    {
-        std::size_t size = values.Size();
-        for (std::size_t i = 0; i < size - 1; ++i)
-        {
-            std::size_t minIndex = i;
+	void BubbleSort(Vector<T>& values)
+	{
+		std::size_t size = values.Size();
+		for (std::size_t i = 0; i < size; ++i)
+		{
+			for (std::size_t j = 0; j < size - i - 1; ++j)
+			{
+				if ((values[j] > values[j + 1]))
+				{
+					Swap(values[j], values[j + 1]);
+				}
+			}
+		}
+	}
+	template<typename T>
+	void BubbleSort(Vector<T>& values, std::function<bool(const T&, const T&)>& sortFunc = nullptr)
+	{
+		std::size_t size = values.Size();
+		for (std::size_t i = 0; i < size; ++i)
+		{
+			for (std::size_t j = 0; j < size - i - 1; ++j)
+			{
+				if ((sortFunc(values[j], values[j + 1])))
+				{
+					Swap(values[j], values[j + 1]);
+				}
+			}
+		}
+	}
+	template<typename T>
+	void SelectionSort(Vector<T>& values)
+	{
+		std::size_t size = values.Size();
+		for (std::size_t i = 0; i < size - 1; ++i)
+		{
+			std::size_t minIndex = i;
 			for (std::size_t j = i + 1; j < size; ++j)
 			{
-				if (values[j] < values[minIndex])
+				if ((values[j] < values[minIndex]))
 				{
 					minIndex = j;
 				}
@@ -72,26 +71,267 @@ namespace Globals
 			{
 				Swap(values[i], values[minIndex]);
 			}
-        }
-    }
+		}
+	}
 	template<typename T>
-    void SelctionSort(Vector<T>& values, std::function<bool(const T&, const T&)>& sortFunc)
-    {
+	void SelectionSort(Vector<T>& values, std::function<bool(const T&, const T&)>& sortFunc)
+	{
 		std::size_t size = values.Size();
-        for (std::size_t i = 0; i < size - 1; ++i)
-        {
-            std::size_t minIndex = i;
-            for (std::size_t j = i + 1; j < size; ++j)
-            {
-				if (sortFunc(values[j], values[minIndex]))
+		for (std::size_t i = 0; i < size - 1; ++i)
+		{
+			std::size_t minIndex = i;
+			for (std::size_t j = i + 1; j < size; ++j)
+			{
+				if ((sortFunc(values[j], values[minIndex])))
 				{
 					minIndex = j;
 				}
-            }
+			}
 			if (i != minIndex)
 			{
 				Swap(values[i], values[minIndex]);
 			}
-        }
-    }
+		}
+	}
+
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void InsertionSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		if (begin == end)
+		{
+			return;
+		}
+		for (ContainerIterator<T> i = begin + 1; i != end; ++i)
+		{
+			T key = std::move(*i);
+			ContainerIterator<T> j = i;
+			while (j > begin)
+			{
+				if (comp(key, *(j - 1)))
+				{
+					*j = std::move(*(j - 1));
+					--j;
+				}
+				else
+				{
+					break;
+				}
+			}
+			*j = std::move(key);
+		}
+	}
+	// a way to hide helper functions for merge sort
+	namespace MergeSortHelpers
+	{
+		template<typename T, typename Compare>
+		void Merge(ContainerIterator<T>left, ContainerIterator<T> mid, ContainerIterator<T> right, Compare comp)
+		{
+			// Create temp versions of each side
+			Vector<T>temp;
+			temp.Reserve(right - left);
+			ContainerIterator<T> tempLeft = left;
+			ContainerIterator<T> tempRight = mid;
+			while (tempLeft != mid && tempRight != right)
+			{
+				if (comp(*tempLeft, *tempRight))
+				{
+					temp.PushBack(*tempLeft);
+					++tempLeft;
+					// temp.pushBack(tempLeft++); // tale the value, then after this line, will apply the ++
+				}
+				else
+				{
+					temp.PushBack(*tempRight);
+					++tempRight;
+				}
+			}
+			while (tempLeft != mid)
+			{
+				temp.PushBack(*tempLeft);
+				++tempLeft;
+			}
+			while (tempRight != right)
+			{
+				temp.PushBack(*tempRight);
+				++tempRight;
+			}
+			for (std::size_t i = 0; i < temp.Size(); ++i)
+			{
+				*(left + i) = temp[i];
+			}
+		}
+
+		template<typename T, typename Compare>
+		void MergeSortUtil(ContainerIterator<T> begin, ContainerIterator<T> end, std::size_t size, Compare comp)
+		{
+			if (size > 1)
+			{
+				std::size_t half = size / 2;
+				ContainerIterator<T> mid = begin + half;
+				// split the data
+				MergeSortUtil(begin, mid, half, comp);
+				MergeSortUtil(mid, end, size - half, comp);
+				// merge the results
+				Merge(begin, mid, end, comp);
+
+			}
+		}
+	}
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void MergeSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		std::size_t size = end - begin;
+		MergeSortHelpers::MergeSortUtil(begin, end, size, comp);
+	}
+	// helpers for quick sort
+	namespace QuickSortHelpers
+	{
+		template<typename T, typename Compare>
+		ContainerIterator<T> Partition(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp)
+		{
+			ContainerIterator<T> pivot = end - 1;
+			ContainerIterator<T> i = begin;
+			for (ContainerIterator<T> j = begin; j != pivot; ++j)
+			{
+				if (comp(*j, *pivot))
+				{
+					Swap(*i, *j);
+					++i;
+				}
+			}
+			Swap(*i, *pivot);
+			return i;
+		}
+	}
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void QuickSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		if (begin < end && (end - begin) > 1)
+		{
+			ContainerIterator<T> p = QuickSortHelpers::Partition(begin, end, comp);
+			QuickSort(begin, p, comp);
+			QuickSort(p + 1, end, comp);
+		}
+	}
+	// bucket sort
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void BucketSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		ContainerIterator<T> maxValue = begin;
+		for (ContainerIterator<T> iter = begin + 1; iter != end; ++iter)
+		{
+			if (*maxValue < *iter)
+			{
+				maxValue = iter;
+			}
+		}
+		std::size_t size = (end - begin);
+		Vector<Vector<T>> buckets;
+		buckets.Resize(size);
+		for (ContainerIterator<T> iter = begin; iter != end; ++iter)
+		{
+			std::size_t bucketIndex = ((size - 1) * (*iter)) / (*maxValue);
+			buckets[bucketIndex].PushBack(*iter);
+		}
+		for (std::size_t i = 0; i < size; ++i)
+		{
+			InsertionSort(buckets[i].Begin(), buckets[i].End(), comp);
+		}
+
+		ContainerIterator<T> iter = begin;
+		for (std::size_t i = 0; i < size; ++i)
+		{
+			for (std::size_t j = 0; j < buckets[i].Size(); ++j)
+			{
+				(*iter) = buckets[i][j];
+				++iter;
+			}
+		}
+	}
+	// Heap Sort
+	// helper function for heap sort
+	namespace HeapSortingHelpers
+	{
+		template<typename T, typename Compare>
+		void Heapify(ContainerIterator<T> begin, ContainerIterator<T> root, std::size_t count, Compare comp)
+		{
+			ContainerIterator<T> largest = root;
+			ContainerIterator<T> i = begin + (2 * (root - begin) + 1);
+			ContainerIterator<T> j = begin + (2 * (root - begin) + 2);
+
+			if (i < begin + count && comp(*largest, *i))
+			{
+				largest = i;
+			}
+			if (j < begin + count && comp(*largest, *j))
+			{
+				largest = j;
+			}
+			if (largest != root)
+			{
+				Swap(*root, *largest);
+				Heapify(begin, largest, count, comp);
+			}
+		}
+	}
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void HeapSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		int count = (end - begin) + 1;
+		if (count <= 1)
+		{
+			return;
+		}
+		// build the max heap
+		for (ContainerIterator<T> i = begin + (count / 2) - 1; i >= begin; --i)
+		{
+			HeapSortingHelpers::Heapify(begin, i, count, comp);
+			if (i == begin)
+			{
+				break;
+			}
+		}
+		// extract the elements from the heap
+		for (ContainerIterator<T> i = end - 1; i > begin; --i)
+		{
+			Swap(*begin, *i);
+			HeapSortingHelpers::Heapify(begin, begin, i - begin, comp);
+		}
+	}
+	//helper function for intro sort
+	namespace IntroSortHelpers
+	{
+		template<typename T, typename Compare>
+		void IntroSortUtil(ContainerIterator<T> begin, ContainerIterator<T> end, int depthLimit, Compare comp)
+		{
+			// less than 16 items use insertion sort
+			std::size_t count = end - begin;
+			if (count < 16)
+			{
+				InsertionSort(begin, end, comp);
+				return;
+			}
+			// if the depth limit is reached due to recursion, use heap sort
+			if (depthLimit <= 0)
+			{
+				HeapSort(begin, end, comp);
+				return;
+			}
+
+			// function as if its quick sort
+			ContainerIterator<T> p = QuickSortHelpers::Partition(begin, end, comp);
+			IntroSortUtil(begin, p, depthLimit - 1, comp);
+			IntroSortUtil(p, end, depthLimit - 1, comp);
+		}
+	}
+	template<typename T, typename Compare = std::less<typename std::iterator_traits<ContainerIterator<T>>::value_type>>
+	void IntroSort(ContainerIterator<T> begin, ContainerIterator<T> end, Compare comp = Compare())
+	{
+		std::size_t count = (end - begin);
+		if (count > 1)
+		{
+			int depthLimit = 2 * std::log2(count);
+			IntroSortHelpers::IntroSortUtil(begin, end, depthLimit, comp);
+		}
+	}
 }

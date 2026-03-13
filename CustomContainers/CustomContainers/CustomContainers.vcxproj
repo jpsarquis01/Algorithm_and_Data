@@ -135,7 +135,9 @@
     <ClInclude Include="Globals.h" />
     <ClInclude Include="KDTree.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Team.h" />
     <ClInclude Include="UnorderedMap.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="Vector2.h" />
