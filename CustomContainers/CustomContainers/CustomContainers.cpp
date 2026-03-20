@@ -175,7 +175,7 @@ void Assignment6()
 {
     srand(42);
 
-    // 4a. Create two teams with 10 players each
+    // Create two teams with 10 players each
     Team teamA;
     Team teamB;
     teamA.Initialize("Team Alpha", 10);
@@ -185,7 +185,7 @@ void Assignment6()
 
     int turnNumber = 0;
 
-    // 4g. Repeat until one team is eliminated
+    // Repeat until one team is eliminated
     while (teamA.GetRemainingPlayers() > 0 && teamB.GetRemainingPlayers() > 0)
     {
         ++turnNumber;
@@ -193,15 +193,15 @@ void Assignment6()
         std::cout << teamA.GetName() << " remaining: " << teamA.GetRemainingPlayers()
             << " | " << teamB.GetName() << " remaining: " << teamB.GetRemainingPlayers() << "\n";
 
-        // 4b. StartTurn for both teams
+        // StartTurn for both teams
         teamA.StartTurn();
         teamB.StartTurn();
 
-        // 4f. Repeat c-e until all players have attacked
+        // Repeat c-e until all players have attacked
         bool anyoneCanAttack = true;
         while (anyoneCanAttack && teamA.GetRemainingPlayers() > 0 && teamB.GetRemainingPlayers() > 0)
         {
-            // 4c. Get next battling player for both teams
+            // Get next battling player for both teams
             Player* playerA = teamA.GetNextBattlingPlayer();
             Player* playerB = teamB.GetNextBattlingPlayer();
 
@@ -211,7 +211,7 @@ void Assignment6()
                 break;
             }
 
-            // 4d. Fastest player attacks the other team
+            // Fastest player attacks the other team
             bool aGoesFirst = false;
             if (playerA != nullptr && playerB != nullptr)
             {
@@ -255,7 +255,7 @@ void Assignment6()
                     std::cout << "  >> Hit! " << teamA.GetName() << " still has " << remainingAfter << " players standing.\n";
             }
 
-            // 4e. OrderPlayers for both teams
+            // OrderPlayers for both teams
             teamA.OrderPlayers();
             teamB.OrderPlayers();
         }
@@ -263,7 +263,7 @@ void Assignment6()
         std::cout << "\n";
     }
 
-    // 4i. Print who wins
+    // Print who wins
     std::cout << "=== BATTLE OVER ===\n";
     if (teamA.GetRemainingPlayers() > 0 && teamB.GetRemainingPlayers() <= 0)
         std::cout << teamA.GetName() << " WINS with " << teamA.GetRemainingPlayers() << " players remaining!\n";
@@ -273,10 +273,15 @@ void Assignment6()
 		std::cout << "It's a DRAW! Both teams have been eliminated." << "\n";
 }
 
+void Class10()
+{
+    // Test MST
+
+}
 
 int main()
 {
-    Assignment6();
+    Class10();
 	return 0;
 }
 

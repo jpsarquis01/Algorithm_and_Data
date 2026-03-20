@@ -133,14 +133,19 @@
     <ClInclude Include="Array.h" />
     <ClInclude Include="ContainerIterator.h" />
     <ClInclude Include="Globals.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="KDTree.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MSTGraph.h" />
+    <ClInclude Include="MSTGraphK.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PriorityQueue.h" />
     <ClInclude Include="Team.h" />
     <ClInclude Include="UnorderedMap.h" />
     <ClInclude Include="Vector.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="WeightedGraph.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
