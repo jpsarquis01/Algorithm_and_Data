@@ -2,189 +2,219 @@
 #include <vector>
 #include <functional>
 
-template<typename KeyType, typename ValueType>
+template <typename KeyType, typename ValueType>
+
 class UnorderedMap
 {
 private:
-    struct KeyValuePair
-    {
-        KeyType key;
-        ValueType value;
-    };
+	struct KeyValuePair
+	{
+		KeyType key;
+		ValueType value;
+	};
+
 public:
-    UnorderedMap(std::size_t initialBucketSize = 8, double load factor = 0.75)
-        :mBucketCount(initialBucketSize)
-        , mLoadFactorThreshold(load factor)
-        , mCount(0)
-    {
-        // in case we set it to 0
-        mBucketCount = std::max(initialBucketSize, 1);
+	UnorderedMap(std::size_t initialBucketSize = 8, double loadFactor = 0.8f)
+		: mLoadFactorThreshold(loadFactor)
+		, mCount(0)
+	{
+		// in case we set it to 0
+		mBucketCount = std::max<std::size_t>(initialBucketSize, 1);
 		mTable.resize(mBucketCount);
-    }
-    
-    // delete copy and move constructor
-    // prevents duplicationg data or losing content
+	}
+
+	// delete copy and move constructors
+	// prevents duplicating dating or losing content
 	UnorderedMap(const UnorderedMap&) = delete;
 	UnorderedMap(const UnorderedMap&&) = delete;
-	UnorderedMap& operator=(const UnorderedMap&) = delete;
-	UnorderedMap& operator=(const UnorderedMap&&) = delete;
+	UnorderedMap operator=(const UnorderedMap&) = delete;
+	UnorderedMap operator=(const UnorderedMap&&) = delete;
 
-    void Insert(const KeyType& key, const ValueType& value)
-    {
+	void Insert(const KeyType& key, const ValueType& value)
+	{
 		std::size_t index = GetTableIndex(key);
-		// check if we already have the key in the table
-		for (KeyValuePair& kv : mTable[index])
+
+		// check 
+		for (KeyValuePair* kv : mTable[index])
 		{
-			if (kv.key == key)
+			if (kv->key == key)
 			{
-                // if so, update the value and return
-				kv.value = value;
+				// if so, update the value and return
+				kv->value = value;
 				return;
 			}
 		}
 
-        // otherwise add the new key and value 
-		KeyValuePair& kv = mTable[index].emplace_back();
-		kv.key = key;
-		kv.value = value;
+		// otherwise add the key and value
+		KeyValuePair* kv = new KeyValuePair();
+
+		kv->key = key;
+		kv->value = value;
+
+		mTable[index].push_back(kv);
+
 		++mCount;
-		
+
 		if ((double)mCount / (double)mBucketCount > mLoadFactorThreshold)
 		{
-            Rehash();
+			Rehash();
 		}
-    }
+	}
 
-    bool Find(const KeyType& key, ValueType& outValue) const
-    {
-		std::size_t index = GetTableIndex(key);
-        for (const KeyValuePair& kv : mTable[index])
-        {
-            if (kv.key == key)
-            {
-				outValue = kv.value;
-				return true;
-            }
-        }
-		return false;
-    }
-
-	bool Has(const KeyType& key) const
+	bool Find(const KeyType& key, ValueType& outValue) const
 	{
 		std::size_t index = GetTableIndex(key);
-		for (const KeyValuePair& kv : mTable[index])
+
+		for (const KeyValuePair* kv : mTable[index])
 		{
-			if (kv.key == key)
+			if (kv->key == key)
+			{
+				outValue = kv->value;
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	bool Has(const KeyType& key)
+	{
+		std::size_t index = GetTableIndex(key);
+
+		for (const KeyValuePair* kv : mTable[index])
+		{
+			if (kv->key == key)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 
-    bool Remove(const KeyType& key)
-    {
-        std::size_t index = GetTableIndex(key);
-		std::vector<KeyValuePair>& bucket = mTable[index];
+	bool Remove(const KeyType& key)
+	{
+		std::size_t index = GetTableIndex(key);
+		std::vector <KeyValuePair*>& bucket = mTable[index];
+
 		for (auto iter = bucket.begin(); iter != bucket.end(); ++iter)
 		{
-			if (iter->key == key)
+			if ((*iter)->key == key)
 			{
+				delete (*iter);
+				(*iter) = nullptr;
+
 				bucket.erase(iter);
 				--mCount;
 				return true;
 			}
 		}
-		return false;
-    }
 
-	std::size_t GetCount() const
+		return false;
+	}
+
+	std::size_t Count() const
 	{
 		return mCount;
 	}
 
 	void Clear()
 	{
-		for (std::vector<KeyValuePair>& bucket : mTable)
+		for (std::vector<KeyValuePair*>& bucket : mTable)
 		{
+			for (KeyValuePair* kv : bucket)
+			{
+				delete kv;
+				kv = nullptr;
+			}
+
 			bucket.clear();
 		}
 		mTable.clear();
 		mCount = 0;
 	}
 
-	// data accessors
+	// data acessors
 	ValueType& operator[](const KeyType& key)
 	{
 		std::size_t index = GetTableIndex(key);
-		for (KeyValuePair& kv : mTable[index])
+
+		for (KeyValuePair* kv : mTable[index])
 		{
-			if (kv.key == key)
+			if (kv->key == key)
 			{
-				return kv.value;
+				return kv->value;
 			}
 		}
-		KeyValuePair& kv = mTable[index].emplace_back();
-		kv.key = key;
-		kv.value = mDefault;
-		++mCount;
-		return kv.value;
-	}
 
-	// mMyMap["Vancouver"] = cool
-	// mMyMap.Insert("Vancouver", cool);
+		KeyValuePair* kv = new KeyValuePair();
+		kv->key = key;
+		kv->value = mDefault;
+		mTable[index].push_back(kv);
+		++mCount;
+		return kv->value;
+	}
 
 	const ValueType& operator[](const KeyType& key) const
 	{
 		std::size_t index = GetTableIndex(key);
-		for (const KeyValuePair& kv : mTable[index])
+
+		for (const KeyValuePair* kv : mTable[index])
 		{
-			if (kv.key == key)
+			if (kv->key == key)
 			{
-				return kv.value;
+				return kv->value;
 			}
 		}
+
 		return mDefault;
 	}
 
 private:
-    ValueType mDefault;
-    // Table is main vector, "Bucket" is vector of objects using same index
-    std::vector<std::vector<KeyValuePair>> mTable;
-    // max indices the table can use to store individual values 
-    std::size_t mBucketCount = 0;
-	// total number od items in the table
-    std::size_t mCount = 0;
-	// how many items in the bucket before we need to resize the table
-    double mLoadFactorThreshold = 1.0;
-    // dynamic hash function, gives a hash value form whatever we use as a key
-	std::hash<KeyType> mHashFunction;
-    
-    // gives the index in the table that the item will be placed
-    std::size_t GetTableIndex(const KeyType& key) const
-    {
-		return mHashFunction(key) % mBucketCount;
-    }
+	ValueType mDefault;
 
-    void Rehash()
-    {
+	// Table is main vector, Bucket is vector of objects using same index
+	std::vector <std::vector<KeyValuePair*>> mTable;
+
+	// max indices the table can use to store individual values
+	std::size_t mBucketCount = 0;
+
+	// total numver of items in the table
+	std::size_t mCount = 0;
+
+	// How many items in a Bucket before we need to resize table
+	double mLoadFactorThreshold = 1.0;
+
+	// Dynamic hash function, gives a hash value from whatever we use as a key
+	std::hash<KeyType> mHashFunction;
+
+	// Gives the index in the table that the item will be placed
+	// Due to the hash value obtained with the key
+	std::size_t GetTableIndex(const KeyType& key) const
+	{
+		return mHashFunction(key) % mBucketCount;
+	}
+
+	void Rehash()
+	{
 		std::size_t newBucketCount = mBucketCount * 2;
-		std::vector<std::vector<KeyValuePair>> newTable;
+		std::vector<std::vector<KeyValuePair*>> newTable;
 		newTable.resize(newBucketCount);
 
-		// Set it first so we can reuse "GetTableIndex"
 		mBucketCount = newBucketCount;
-		for (std::vector<KeyValuePair>& bucket : mTable)
+
+		for (std::vector<KeyValuePair*>& bucket : mTable)
 		{
-			for (KeyValuePair& kv : bucket)
+			for (KeyValuePair* kv : bucket)
 			{
-				std::size_t index = GetTableIndex(kv.key);
+				std::size_t index = GetTableIndex(kv->key);
 				newTable[index].push_back(kv);
 			}
 			bucket.clear();
 		}
+
 		mTable.clear();
-		// swap the new table with the old one
+
 		mTable.swap(newTable);
-    }
+	}
 };

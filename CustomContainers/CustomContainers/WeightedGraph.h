@@ -70,7 +70,7 @@ public:
 		{
 			Edge curEdge = process.top();
 			process.pop();
-			Node* node = Nodes[curEdge.nodeIndex];
+			Node* node = mNodes[curEdge.nodeIndex];
 			if (curEdge.weight > node->totalWeight)
 			{
 				continue;
@@ -90,7 +90,7 @@ public:
 				{
 					edgeNode->totalWeight = node->totalWeight + edge.weight;
 					edgeNode->parent = node;
-					process.push(edge);
+					process.push({ edge.nodeIndex, edgeNode->totalWeight });
 				}
 			}
 		}
@@ -117,13 +117,17 @@ public:
 		mNodes.Clear();
 	}
 
+	Vector<Node*> GetNode()
+	{
+		return mNodes;
+	}
 private:
 	void Reset()
 	{
 		for (std::size_t i = 0; i < mNodes.Size(); ++i)
 		{
 			mNodes[i]->parent = nullptr;
-			mNodes[i]->edges[e].totalWeight = std::numeric_limits<W>::max();
+			mNodes[i]->totalWeight = std::numeric_limits<W>::max();
 		}
 	}
 	Vector<Node*> mNodes;

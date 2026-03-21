@@ -34,4 +34,10 @@ struct Vector2
 
 	float DistanceSquared(const Vector2& rhs) const { return (x - rhs.x) + (x - rhs.x) + (y - rhs.y) + (y - rhs.y); }
 	float Distance(const Vector2& rhs) const { return sqrtf(DistanceSquared(rhs)); }
+
+	// Overloaded operator -> makes it able to comapre const Vector2& == Vector2
+	bool operator==(const Vector2& other) const
+	{
+		return x == other.x && y == other.y;
+	}
 };

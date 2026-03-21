@@ -5,6 +5,70 @@
     {
       "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\CustomContainers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\CustomContainers.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\WeightedGraph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\WeightedGraph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\UnorderedMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\UnorderedMap.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Vector2.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Vector.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Vector3.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\PriorityQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\PriorityQueue.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraphK.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\MSTGraphK.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\MSTGraph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\KDTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\KDTree.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\ContainerIterator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\ContainerIterator.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Array.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Array.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Team.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Team.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2969970C-830B-4172-B2D0-76963E0C687F}|CustomContainers\\CustomContainers.vcxproj|solutionrelative:CustomContainers\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,11 +78,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnorderedMap.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\UnorderedMap.h",
+              "RelativeDocumentMoniker": "CustomContainers\\UnorderedMap.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\UnorderedMap.h",
+              "RelativeToolTip": "CustomContainers\\UnorderedMap.h",
+              "ViewState": "AgIAALUAAAAAAAAAAAAowNsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-20T02:16:12.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Vector.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Vector.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector.h",
+              "RelativeToolTip": "CustomContainers\\Vector.h",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T19:01:20.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Vector2.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector2.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Vector2.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector2.h",
+              "RelativeToolTip": "CustomContainers\\Vector2.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-24T17:49:38.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Vector3.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector3.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Vector3.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Vector3.h",
+              "RelativeToolTip": "CustomContainers\\Vector3.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-14T16:53:11.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeightedGraph.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\WeightedGraph.h",
+              "RelativeDocumentMoniker": "CustomContainers\\WeightedGraph.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\WeightedGraph.h",
+              "RelativeToolTip": "CustomContainers\\WeightedGraph.h",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAowIUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-14T15:59:38.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Globals.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Globals.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Globals.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Globals.h",
+              "RelativeToolTip": "CustomContainers\\Globals.h",
+              "ViewState": "AgIAADYBAAAAAAAAAAAuwFABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-14T17:11:48.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MSTGraphK.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraphK.h",
+              "RelativeDocumentMoniker": "CustomContainers\\MSTGraphK.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraphK.h",
+              "RelativeToolTip": "CustomContainers\\MSTGraphK.h",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAswGYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-14T16:52:21.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MSTGraph.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraph.h",
+              "RelativeDocumentMoniker": "CustomContainers\\MSTGraph.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\MSTGraph.h",
+              "RelativeToolTip": "CustomContainers\\MSTGraph.h",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAswH0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-14T16:51:37.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Map.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Map.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Map.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Map.h",
+              "RelativeToolTip": "CustomContainers\\Map.h",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAnwHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-21T17:01:45.965Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "KDTree.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\KDTree.h",
+              "RelativeDocumentMoniker": "CustomContainers\\KDTree.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\KDTree.h",
+              "RelativeToolTip": "CustomContainers\\KDTree.h",
+              "ViewState": "AgIAAOsAAAAAAAAAAAAAAAYBAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-24T17:26:10.949Z"
             },
             {
               "$type": "Document",
@@ -28,10 +217,82 @@
               "RelativeDocumentMoniker": "CustomContainers\\CustomContainers.cpp",
               "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\CustomContainers.cpp*",
               "RelativeToolTip": "CustomContainers\\CustomContainers.cpp*",
-              "ViewState": "AgIAAIwCAAAAAAAAAAAQwKMCAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAADECAAAAAAAAAAAqwCAEAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-21T03:13:44.434Z",
+              "WhenOpened": "2026-01-10T17:22:17.359Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PriorityQueue.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\PriorityQueue.h",
+              "RelativeDocumentMoniker": "CustomContainers\\PriorityQueue.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\PriorityQueue.h",
+              "RelativeToolTip": "CustomContainers\\PriorityQueue.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-17T19:57:51.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Graph.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Graph.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Graph.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Graph.h",
+              "RelativeToolTip": "CustomContainers\\Graph.h",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAswAEBAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-14T16:55:21.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ContainerIterator.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\ContainerIterator.h",
+              "RelativeDocumentMoniker": "CustomContainers\\ContainerIterator.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\ContainerIterator.h",
+              "RelativeToolTip": "CustomContainers\\ContainerIterator.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-17T18:08:27.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Array.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Array.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Array.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Array.h",
+              "RelativeToolTip": "CustomContainers\\Array.h",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-10T17:23:56.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Team.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Team.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Team.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Team.h",
+              "RelativeToolTip": "CustomContainers\\Team.h",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAcwJQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-28T20:51:27.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Player.h",
+              "DocumentMoniker": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Player.h",
+              "RelativeDocumentMoniker": "CustomContainers\\Player.h",
+              "ToolTip": "D:\\LaSalle_2yr\\Algorithms and Data Patterns\\Algorithm_and_Data\\CustomContainers\\CustomContainers\\Player.h",
+              "RelativeToolTip": "CustomContainers\\Player.h",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-02-28T20:48:37.562Z"
             }
           ]
         }
