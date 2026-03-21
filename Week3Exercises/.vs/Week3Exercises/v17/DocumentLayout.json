@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\LaSalle 2Year\\Algorithms and Data\\Algorithm_and_Data\\Week3Exercises\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A95DF0AB-A365-4575-B73F-4FE771B4A7DB}|Week3Exercises\\Week3Exercises.vcxproj|C:\\LaSalle 2Year\\Algorithms and Data\\Algorithm_and_Data\\Week3Exercises\\Week3Exercises\\Week3Exercises.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A95DF0AB-A365-4575-B73F-4FE771B4A7DB}|Week3Exercises\\Week3Exercises.vcxproj|solutionrelative:Week3Exercises\\Week3Exercises.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Week3Exercises.cpp",
+              "DocumentMoniker": "C:\\LaSalle 2Year\\Algorithms and Data\\Algorithm_and_Data\\Week3Exercises\\Week3Exercises\\Week3Exercises.cpp",
+              "RelativeDocumentMoniker": "Week3Exercises\\Week3Exercises.cpp",
+              "ToolTip": "C:\\LaSalle 2Year\\Algorithms and Data\\Algorithm_and_Data\\Week3Exercises\\Week3Exercises\\Week3Exercises.cpp*",
+              "RelativeToolTip": "Week3Exercises\\Week3Exercises.cpp*",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAAAHoBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-24T16:49:58.849Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
